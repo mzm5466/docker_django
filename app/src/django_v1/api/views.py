@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+﻿from django.shortcuts import render,HttpResponse
 from django.core.mail import send_mail
 from .models import BasicUser,BasicEmail
 from django.http import JsonResponse
@@ -7,7 +7,7 @@ import random,datetime
 def send_email(request):
     email = request.GET.get("email")
     send_mail(subject="demo_test",message="hello world",\
-              from_email="1107771338@qq.com",\
+              from_email="收件人邮箱",\
               recipient_list=[email], \
               fail_silently = False
     )
@@ -20,7 +20,7 @@ def send_email_by_code(request):
     except Exception as e:
         BasicEmail.objects.create(code=code, email=email)
         send_mail(subject="demo_test", message=("您的验证码为%d" % code), \
-                  from_email="1107771338@qq.com", \
+                  from_email="发件人邮箱", \
                   recipient_list=[email], \
                   fail_silently=False
                   )
@@ -32,7 +32,7 @@ def send_email_by_code(request):
         if timeS>10:
             BasicEmail.objects.create(code=code,email=email)
             send_mail(subject="demo_test", message=("您的验证码为%d" % code), \
-                      from_email="1107771338@qq.com", \
+                      from_email="收件人邮箱", \
                       recipient_list=[email], \
                       fail_silently=False
                       )
