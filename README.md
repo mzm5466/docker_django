@@ -21,7 +21,7 @@ alpine-sdk \  alpine的pandas支持
 │   ├── supervisor.d
 │   ├── supervisord.conf
 │   ├── src
-│   │   ├── xuegod
+│   │   ├── 你的django项目
 │   │   ├── test.log
 │   └── uwsgi.ini
 │   └── run.sh
